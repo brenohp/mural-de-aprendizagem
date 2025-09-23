@@ -1,28 +1,39 @@
-# Nome do workflow de teste
-name: Teste de Diagnóstico da Pipeline
+# Nome do workflow que aparecerá na aba "Actions" do GitHub
+name: Pipeline de Verificação e Qualidade
 
-# Gatilhos: push na main e também um gatilho manual
+# Define os gatilhos: quando esta automação deve rodar
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch: # Permite que você rode o workflow manualmente na aba "Actions"
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
 
-# Apenas uma tarefa
+# Define as tarefas (jobs) que serão executadas
 jobs:
-  teste:
-    # Nome da tarefa
-    name: Teste Mínimo
-    # Máquina virtual
+  verificacao:
+    name: Verificação de Qualidade
     runs-on: ubuntu-latest
-
-    # Passos
     steps:
-      # Este é o passo mais básico e fundamental de qualquer workflow.
-      # Ele usa uma action oficial do GitHub para baixar o código.
-      - name: 1. Testando o checkout de código
+      # Passo 1: Baixa o código do seu repositório
+      - name: 1. Checkout do código
         uses: actions/checkout@v4
 
-      # Este passo simplesmente executa um comando no terminal da máquina virtual
-      # para listar os arquivos que foram baixados.
-      - name: 2. Listando arquivos no diretório
-        run: ls -l
+      # Passo 2: Valida o HTML usando a action correta que VOCÊ encontrou
+      - name: 2. Validar sintaxe do HTML
+        uses: Cyb3r-Jak3/html5validator-action@v1
+        with:
+          # Informa à ferramenta para validar todos os arquivos .html na raiz do projeto
+          files: './*.html'
+
+      # Passo 3: Verifica se existem links quebrados no seu site
+      - name: 3. Verificar links quebrados
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose
+
+      # Passo 4: Verifica a formatação do código com Prettier
+      - name: 4. Verificar formatação do código
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --check .
