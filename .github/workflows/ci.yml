@@ -27,11 +27,11 @@ jobs:
           # './' significa a raiz do nosso projeto.
           root: ./
 
-      # Passo 2.1 (Bônus): Salva o arquivo de log da validação
+      # Passo 2.1: Salva o arquivo de log da validação
       # Como sugerido na documentação, este passo salva o log como um "artefato".
       # Você poderá baixá-lo na página da Action que rodou.
       - name: 2.1 Salvar log de validação HTML
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: log-validacao-html
           path: log.log
