@@ -19,12 +19,22 @@ jobs:
       - name: 1. Checkout do código
         uses: actions/checkout@v4
 
-      # Passo 2: Valida o HTML usando a action correta que VOCÊ encontrou
+      # Passo 2: Valida o HTML usando a action e a VERSÃO CORRETA da documentação
       - name: 2. Validar sintaxe do HTML
-        uses: Cyb3r-Jak3/html5validator-action@v1
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
         with:
-          # Informa à ferramenta para validar todos os arquivos .html na raiz do projeto
-          files: './*.html'
+          # O parâmetro 'root' aponta para o diretório a ser verificado.
+          # './' significa a raiz do nosso projeto.
+          root: ./
+
+      # Passo 2.1 (Bônus): Salva o arquivo de log da validação
+      # Como sugerido na documentação, este passo salva o log como um "artefato".
+      # Você poderá baixá-lo na página da Action que rodou.
+      - name: 2.1 Salvar log de validação HTML
+        uses: actions/upload-artifact@v3
+        with:
+          name: log-validacao-html
+          path: log.log
 
       # Passo 3: Verifica se existem links quebrados no seu site
       - name: 3. Verificar links quebrados
