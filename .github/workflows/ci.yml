@@ -1,0 +1,41 @@
+# Nome do workflow que aparecerá na aba "Actions" do GitHub
+name: Verificação de Qualidade do Código
+
+# Define os gatilhos: quando esta automação deve rodar?
+on:
+  # Roda quando um push é feito na branch 'main'
+  push:
+    branches: [ "main" ]
+  # Roda quando um Pull Request é aberto ou atualizado para a branch 'main'
+  pull_request:
+    branches: [ "main" ]
+
+# Define as tarefas (jobs) que serão executadas
+jobs:
+  # O nome da nossa tarefa. Pode ser qualquer nome.
+  build-and-verify:
+    # O tipo de máquina virtual que o GitHub usará para rodar o código
+    runs-on: ubuntu-latest
+
+    # A sequência de passos que a tarefa executará
+    steps:
+      # 1. Primeiro, baixa o código do seu repositório para a máquina virtual
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # 2. Configura o ambiente Node.js. Mesmo usando só HTML/CSS,
+      #    esta é uma boa prática para projetos web e permite usar ferramentas como linters.
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Usamos uma versão recente e estável do Node.js
+
+      # 3. Este passo verifica se o HTML é válido (opcional, mas ótimo para aprender)
+      #    Ele usa uma ferramenta da comunidade para validar o 'index.html'
+      - name: Validar arquivo HTML
+        uses: Cyb3r-Jak3/html5-validator@v1
+        with:
+          root: ./ # Pasta onde está o arquivo HTML
+          files: index.html # O arquivo a ser validado
+
+      # 4. Adicionaremos mais passos aqui no futuro, como testes de link quebrado ou de CSS!
