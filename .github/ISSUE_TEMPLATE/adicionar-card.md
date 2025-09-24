@@ -1,9 +1,9 @@
 ---
-name: 🙋 Adicionar meu Card de Contribuidor
-description: Use este modelo para solicitar a adição do seu card no mural.
+name: "🙋 Adicionar meu Card de Contribuidor"
+description: "Use este modelo para solicitar a adição do seu card no mural."
 title: "[CARD] Adicionar o card de [SEU NOME AQUI]"
 labels: ["good first issue", "novo card"]
-assignees: ""
+assignees: ''
 ---
 
 ## 👋 Olá! Quero fazer parte do mural!
