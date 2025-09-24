@@ -43,7 +43,9 @@ header h1 {
   padding: 20px;
   text-align: center;
   /* A transição será explicada no próximo passo */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card img {
