@@ -13,8 +13,8 @@ Uma página web simples, construída com HTML e CSS, que exibe um mural com card
 
 ### ✨ Tecnologias Utilizadas
 
-* **HTML5**
-* **CSS3**
+- **HTML5**
+- **CSS3**
 
 ## 🎯 Como Contribuir
 
