@@ -10,6 +10,13 @@ jobs:
   verificacao:
     name: Verificação de Qualidade
     runs-on: ubuntu-latest
+
+    # Adiciona as permissões para esta tarefa poder escrever no repositório
+    # e modificar os próprios arquivos de workflow.
+    permissions:
+      contents: write
+      workflows: write
+
     steps:
       # Passo 1: Baixa o código do seu repositório
       - name: 1. Checkout do código
