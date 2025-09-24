@@ -1,0 +1,6 @@
+# Excluir arquivos de workflow do GitHub Actions
+.github/workflows/
+
+# Outros arquivos que não devem ser formatados
+node_modules/
+*.log
