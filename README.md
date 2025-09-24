@@ -1,37 +1,51 @@
 # 👋 Mural da Comunidade
 
 ![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-blue.svg)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![PRs são bem-vindos](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![Status da Pipeline](https://github.com/brenohp/mural-de-aprendizagem/actions/workflows/ci.yml/badge.svg)
 
-Bem-vindo(a) ao Mural da Comunidade! Este é um projeto de código aberto criado especialmente para quem está começando no mundo do desenvolvimento e quer fazer sua **primeira contribuição**.
+Bem-vindo(a) ao Mural da Comunidade! Um projeto de código aberto criado para ser a porta de entrada para sua **primeira contribuição no mundo open source**.
 
-O objetivo é simples: adicionar o seu "card" de apresentação em nosso mural e, no processo, aprender o fluxo completo de contribuição no GitHub (Fork, Pull Request, etc.).
+## 💖 Por que este Projeto Existe?
 
-## 🚀 Sobre o Projeto
+Contribuir para um projeto pela primeira vez pode ser intimidante. Questões como "Por onde começo?", "E se eu fizer algo errado?" são muito comuns.
 
-Uma página web simples, construída com HTML e CSS, que exibe um mural com cards de todas as pessoas que contribuíram. Cada card mostra o nome, uma breve descrição e links para as redes sociais do contribuidor.
+Este repositório foi criado para ser um espaço seguro e 100% amigável. Aqui, você pode aprender na prática o fluxo completo de contribuição no GitHub (Fork, Pull Request, Actions, etc.) sem medo de errar. Nosso objetivo é que, ao final, você se sinta mais confiante para contribuir com qualquer outro projeto no futuro.
 
-### ✨ Tecnologias Utilizadas
+## ✨ Nossos Incríveis Contribuidores
 
-- **HTML5**
-- **CSS3**
+Agradecemos a todas as pessoas que já fazem parte da nossa comunidade! Você pode ser o próximo!
+
+<a href="https://github.com/brenohp/mural-de-aprendizagem/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=brenohp/mural-de-aprendizagem" />
+</a>
+
+## 🛠️ Ferramentas e Tecnologias
+
+Este projeto, embora simples na aparência, utiliza um ecossistema de desenvolvimento moderno para garantir a qualidade e a consistência do código:
+
+* **HTML5** e **CSS3** para a estrutura e o estilo.
+* **GitHub Actions (CI/CD)** para automação de tarefas.
+* **Prettier** para formatação automática do código.
+* **Lychee** para verificar se nenhum link está quebrado.
+* E outras ferramentas para validação e gerenciamento da comunidade!
 
 ## 🎯 Como Contribuir
 
-Contribuir para este projeto é fácil e uma ótima forma de praticar. Estamos sempre procurando por novos contribuidores!
+A principal forma de contribuir é **adicionando o seu próprio card** ao mural! Temos um guia detalhado para te ajudar.
 
-A principal forma de contribuir é **adicionando o seu próprio card** ao mural!
+➡️ **Confira nosso [GUIA DE CONTRIBUIÇÃO](./CONTRIBUTING.md) para o passo a passo completo!**
 
-1.  **Procure uma Issue:** Vá até a aba [Issues](https://github.com/brenohp/mural-de-aprendizagem/issues) e procure por uma marcada como `good first issue` ou `help wanted`. Se não houver, sinta-se à vontade para criar uma sugerindo adicionar seu card!
+## 🗺️ Roadmap (Próximos Passos)
 
-2.  **Siga o Guia:** Todas as instruções detalhadas de como adicionar seu card, desde o fork até a abertura do Pull Request, estão em nosso **[GUIA DE CONTRIBUIÇÃO](./CONTRIBUTING.md)**.
+Este projeto está sempre evoluindo! Nossas ideias para o futuro incluem:
 
-3.  **Abra seu Pull Request:** Depois de seguir o guia, envie seu PR. Ficaremos felizes em revisar e adicionar sua contribuição ao mural!
+* [ ] Adicionar um Modo Noturno (Dark Mode) na página.
+* [ ] Criar filtros para os cards (ex: por tecnologia).
+* [ ] Melhorar a responsividade para dispositivos móveis.
+
+Tem uma ideia? Abra uma [Issue](https://github.com/brenohp/mural-de-aprendizagem/issues) e vamos conversar sobre ela!
 
 ## 📜 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
-
----
-
-Obrigado a todos que fazem parte da nossa comunidade! ❤️
