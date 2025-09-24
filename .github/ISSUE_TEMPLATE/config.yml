@@ -1,0 +1,10 @@
+# .github/ISSUE_TEMPLATE/config.yml
+
+# Desabilita a opção de criar uma issue em branco, forçando o uso dos templates.
+blank_issues_enabled: false
+
+# Adiciona links úteis na página de seleção de issues.
+contact_links:
+  - name: 📖 Guia de Contribuição
+    url: https://github.com/brenohp/mural-de-aprendizagem/blob/main/CONTRIBUTING.md
+    about: Por favor, leia nosso guia antes de criar uma issue ou contribuir.
