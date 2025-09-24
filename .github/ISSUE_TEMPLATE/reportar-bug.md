@@ -2,8 +2,8 @@
 name: 🐛 Reportar um Bug
 about: Encontrou algo que não está funcionando como deveria? Nos avise.
 title: "[BUG] "
-labels: bug
-assignees: ''
+labels: ["bug"]
+assignees: ""
 ---
 
 ## Descreva o bug
@@ -11,6 +11,7 @@ Uma descrição clara e concisa do que é o bug.
 
 ## Para Reproduzir
 Passos para reproduzir o comportamento:
+
 1. Vá para '...'
 2. Clique em '....'
 3. Role até '....'
