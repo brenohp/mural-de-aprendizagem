@@ -1,0 +1,73 @@
+# Nome do workflow do nosso robô revisor
+name: Assistente de Revisão de PR
+
+on:
+  # Gatilho: Roda quando um Pull Request é aberto ou sincronizado (novos commits)
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  analyze-pr:
+    name: Analisar Alterações do PR
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Faz o checkout do código do PR para que possamos analisá-lo
+      - name: Checkout do código
+        uses: actions/checkout@v4
+        with:
+          # Precisamos buscar o histórico para comparar as branches
+          fetch-depth: 0
+
+      # 2. Passo principal: Analisa as alterações no arquivo index.html
+      - name: Verificar se apenas linhas foram adicionadas ao index.html
+        id: check_diff # Damos um ID a este passo para usar seu resultado depois
+        run: |
+          # Compara a branch do PR (HEAD) com a branch principal (main)
+          # Foco apenas no arquivo index.html
+          # O comando 'git diff' nos mostra as linhas adicionadas (+) e removidas (-)
+          # Usamos 'grep' para filtrar essas linhas e 'wc -l' para contá-las.
+          
+          git diff --no-prefix origin/${{ github.base_ref }}..origin/${{ github.head_ref }} -- index.html > diff.txt
+          
+          ADDED_LINES=$(grep -c '^+ ' diff.txt || true)
+          REMOVED_LINES=$(grep -c '^- ' diff.txt || true)
+          
+          echo "Linhas Adicionadas: $ADDED_LINES"
+          echo "Linhas Removidas: $REMOVED_LINES"
+          
+          # A regra: só pode haver linhas adicionadas. Nenhuma pode ser removida.
+          # A primeira linha de um diff é sempre '--- a/...' que conta como removida, então permitimos 1 remoção.
+          if [[ "$REMOVED_LINES" -le 1 && "$ADDED_LINES" -gt 0 ]]; then
+            echo "RESULT=success" >> $GITHUB_OUTPUT
+          else
+            echo "RESULT=failure" >> $GITHUB_OUTPUT
+          fi
+
+      # 3. Usa uma action para postar comentários no PR
+      - name: Postar comentário de sucesso no PR
+        # Roda apenas se o passo anterior (check_diff) teve o resultado "success"
+        if: steps.check_diff.outputs.RESULT == 'success'
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            Olá, @${{ github.actor }}! 👋
+            
+            Obrigado pela sua contribuição! Nosso robô revisor verificou seu Pull Request e parece que está tudo certo: você apenas adicionou seu card ao mural.
+            
+            Excelente trabalho! ✅
+            
+            Agora, um mantenedor humano fará a revisão final.
+
+      - name: Postar comentário de falha no PR
+        # Roda apenas se o passo anterior (check_diff) teve o resultado "failure"
+        if: steps.check_diff.outputs.RESULT == 'failure'
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            Olá, @${{ github.actor }}! 👋
+            
+            Obrigado por iniciar esta contribuição! Nosso robô revisor analisou seu Pull Request e detectou um problema.
+            
+            🔴 **Problema:** Parece que você modificou ou removeu linhas do `index.html` em vez de apenas adicionar o seu card.
+            
+            Por favor, ajuste seu código para garantir que você está **apenas adicionando** o seu card, sem alterar o conteúdo que já existe. Se tiver dúvidas, consulte nosso [Guia de Contribuição](https://github.com/brenohp/mural-de-aprendizagem/blob/main/CONTRIBUTING.md) ou peça ajuda aqui nos comentários.
