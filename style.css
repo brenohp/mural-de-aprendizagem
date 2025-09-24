@@ -1,14 +1,32 @@
+/* Aplicando as novas fontes e definindo variáveis de cor */
+:root {
+  --cor-fundo: #f8f9fa;
+  --cor-card: #ffffff;
+  --cor-titulo: #212529;
+  --cor-texto: #495057;
+  --cor-link: #007bff;
+  --fonte-titulo: "Poppins", sans-serif;
+  --fonte-texto: "Roboto", sans-serif;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
+  font-family: var(--fonte-texto);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
   margin: 0;
   padding: 20px;
 }
+
 header {
   text-align: center;
   margin-bottom: 40px;
 }
+
+header h1 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-titulo);
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -16,35 +34,54 @@ header {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .card {
-  background-color: white;
+  background-color: var(--cor-card);
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra mais suave e profissional */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 20px;
   text-align: center;
-  transition: transform 0.2s;
+  /* A transição será explicada no próximo passo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card:hover {
-  transform: translateY(-5px);
-}
+
 .card img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+  border: 3px solid var(--cor-fundo);
 }
+
 .card h2 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-titulo);
   margin: 0 0 10px 0;
   font-size: 1.2em;
 }
+
 .card p {
   font-size: 0.9em;
-  line-height: 1.4;
+  line-height: 1.5;
 }
+
 .social-links a {
   text-decoration: none;
-  color: #007bff;
+  color: var(--cor-link);
   margin: 0 10px;
   font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+/* Efeitos de Hover (passar o mouse) */
+.card:hover {
+  transform: translateY(-8px);
+  /* Sombra mais pronunciada no hover para dar efeito de profundidade */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.social-links a:hover {
+  opacity: 0.7;
 }
