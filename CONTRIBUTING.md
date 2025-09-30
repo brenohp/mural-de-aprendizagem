@@ -25,31 +25,37 @@ O único arquivo que você precisa editar é o `index.html`.
 
     ```html
     <div class="card">
-        <img
-          src="[https://github.com/SEU_USUARIO_AQUI.png](https://github.com/SEU_USUARIO_AQUI.png)"
-          alt="Foto de perfil do GitHub"
-        />
-        <h2>Seu Nome Aqui</h2>
-        <p>
-          Uma breve descrição sobre você, seus hobbies ou o que está aprendendo.
-        </p>
-        <div class="social-links">
-          <a href="[https://github.com/SEU_USUARIO_AQUI](https://github.com/SEU_USUARIO_AQUI)" target="_blank"
-            >GitHub</a
-          >
-          <a href="[https://linkedin.com/in/SEU_USUARIO_AQUI](https://linkedin.com/in/SEU_USUARIO_AQUI)" target="_blank"
-            >LinkedIn</a
-          >
-        </div>
+      <img
+        src="[https://github.com/SEU_USUARIO_AQUI.png](https://github.com/SEU_USUARIO_AQUI.png)"
+        alt="Foto de perfil do GitHub"
+      />
+      <h2>Seu Nome Aqui</h2>
+      <p>
+        Uma breve descrição sobre você, seus hobbies ou o que está aprendendo.
+      </p>
+      <div class="social-links">
+        <a
+          href="[https://github.com/SEU_USUARIO_AQUI](https://github.com/SEU_USUARIO_AQUI)"
+          target="_blank"
+          >GitHub</a
+        >
+        <a
+          href="[https://linkedin.com/in/SEU_USUARIO_AQUI](https://linkedin.com/in/SEU_USUARIO_AQUI)"
+          target="_blank"
+          >LinkedIn</a
+        >
       </div>
+    </div>
     ```
+
 4.  Cole este novo bloco **imediatamente após o último card existente** no `index.html`.
+
     > **⚠️ ATENÇÃO:** Não remova ou altere nada além das informações dentro do seu novo bloco de código. O sistema de revisão irá detectar se você apagar outros cards.
 
 5.  **Personalize as informações** no bloco de código que você colou:
-    * **Foto:** Substitua `SEU_USUARIO_AQUI` pelo seu username do GitHub na URL (Ex: `https://github.com/brenohp.png`).
-    * **Nome e Descrição:** Coloque seu nome e sua descrição pessoal.
-    * **Links Sociais:** Atualize os URLs e o texto para os seus perfis (GitHub, LinkedIn, etc.).
+    - **Foto:** Substitua `SEU_USUARIO_AQUI` pelo seu username do GitHub na URL (Ex: `https://github.com/brenohp.png`).
+    - **Nome e Descrição:** Coloque seu nome e sua descrição pessoal.
+    - **Links Sociais:** Atualize os URLs e o texto para os seus perfis (GitHub, LinkedIn, etc.).
 
 ## 📤 Passo 3: Finalizando e Abrindo o Pull Request
 
