@@ -1,20 +1,69 @@
-# Como Contribuir
+# 🚀 Guia de Contribuição: Adicione seu Card ao Mural
 
-Ficamos muito felizes com o seu interesse em contribuir com o **Mural da Comunidade**! Este é um guia rápido para te ajudar.
+Ficamos muito felizes com o seu interesse em contribuir com o **Mural da Comunidade**! Este guia rápido irá te levar à sua **primeira contribuição open source**.
 
-## Adicionando o seu Card
+## ✅ Passo 1: Preparação do Ambiente
 
-A principal forma de contribuir é adicionando o seu próprio card ao nosso mural. Siga os passos:
+1.  **Faça um Fork:** Clique no botão "Fork" no canto superior direito deste repositório para criar uma cópia em sua conta do GitHub.
+2.  **Clone o seu fork:** Clone a cópia para a sua máquina local e entre na pasta do projeto.
+    ```bash
+    git clone [https://github.com/SEU_USUARIO/mural-de-aprendizagem.git](https://github.com/SEU_USUARIO/mural-de-aprendizagem.git)
+    cd mural-de-aprendizagem
+    ```
+3.  **Crie uma nova branch:** Crie uma branch específica para a sua alteração.
+    ```bash
+    git checkout -b adiciona-SEU-NOME
+    ```
 
-1.  **Faça um Fork** deste repositório.
-2.  **Clone o seu fork** para a sua máquina local.
-3.  **Crie uma nova branch:** `git checkout -b adiciona-meu-nome`.
-4.  Abra o arquivo `index.html`.
-5.  Encontre a seção de comentários que diz ``.
-6.  Copie o bloco de código do card de exemplo.
-7.  Cole-o abaixo do último card de contribuidor (abaixo do comentário ``).
-8.  Altere as informações para as suas: foto (usando a URL do seu GitHub `https://github.com/SEU_USUARIO.png`), nome, descrição e links sociais.
-9.  **Faça o commit e o push** para a sua branch.
-10. **Abra um Pull Request** no repositório original.
+## ✍️ Passo 2: Adicionando seu Card ao `index.html`
+
+O único arquivo que você precisa editar é o `index.html`.
+
+1.  Abra o arquivo **`index.html`** no seu editor de código.
+2.  Role a tela até a seção que contém a tag `<main class="grid-container">`.
+3.  Você encontrará o bloco de código do **Card de Exemplo**. Copie **TODO** o bloco abaixo:
+
+    ```html
+    <div class="card">
+        <img
+          src="[https://github.com/SEU_USUARIO_AQUI.png](https://github.com/SEU_USUARIO_AQUI.png)"
+          alt="Foto de perfil do GitHub"
+        />
+        <h2>Seu Nome Aqui</h2>
+        <p>
+          Uma breve descrição sobre você, seus hobbies ou o que está aprendendo.
+        </p>
+        <div class="social-links">
+          <a href="[https://github.com/SEU_USUARIO_AQUI](https://github.com/SEU_USUARIO_AQUI)" target="_blank"
+            >GitHub</a
+          >
+          <a href="[https://linkedin.com/in/SEU_USUARIO_AQUI](https://linkedin.com/in/SEU_USUARIO_AQUI)" target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    ```
+4.  Cole este novo bloco **imediatamente após o último card existente** no `index.html`.
+    > **⚠️ ATENÇÃO:** Não remova ou altere nada além das informações dentro do seu novo bloco de código. O sistema de revisão irá detectar se você apagar outros cards.
+
+5.  **Personalize as informações** no bloco de código que você colou:
+    * **Foto:** Substitua `SEU_USUARIO_AQUI` pelo seu username do GitHub na URL (Ex: `https://github.com/brenohp.png`).
+    * **Nome e Descrição:** Coloque seu nome e sua descrição pessoal.
+    * **Links Sociais:** Atualize os URLs e o texto para os seus perfis (GitHub, LinkedIn, etc.).
+
+## 📤 Passo 3: Finalizando e Abrindo o Pull Request
+
+1.  **Faça o commit das suas alterações:**
+    ```bash
+    git add index.html
+    git commit -m "feat: adiciona card de [Seu Nome Aqui]"
+    ```
+2.  **Faça o push** para o seu repositório remoto (seu fork):
+    ```bash
+    git push origin adiciona-SEU-NOME
+    ```
+3.  **Abra um Pull Request (PR):** Vá para a página do seu fork no GitHub e você verá um botão para **"Compare & pull request"**.
+
+Pronto! Nosso robô de qualidade irá checar seu código e um mantenedor fará a revisão final.
 
 Obrigado por fazer parte da nossa comunidade!
